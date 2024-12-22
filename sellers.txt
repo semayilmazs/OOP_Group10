@@ -1,0 +1,2 @@
+seller_one,password789,ProductA,ProductB,ProductC
+seller_two,password012,ProductX,ProductY
