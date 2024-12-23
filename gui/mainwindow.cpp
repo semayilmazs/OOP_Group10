@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     };
 
     populateProductList();
+    connect(ui->productListWidget, &QListWidget::currentRowChanged, this, &MainWindow::onProductSelected);
     connect(ui->addButton, &QPushButton::clicked, this, &MainWindow::onAddToCart);
     connect(ui->removeButton, &QPushButton::clicked, this, &MainWindow::onRemoveFromCart);
     connect(ui->applyDiscountButton, &QPushButton::clicked, this, &MainWindow::onApplyDiscount);
