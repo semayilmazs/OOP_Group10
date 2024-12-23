@@ -14,6 +14,9 @@ public:
     std::string getName() const;
     double getPrice() const;
     std::string getDescription() const; // Getter for description
+    int getStock() const;
+    void reduceStock(int quantity);
+    void increaseStock(int quantity);
 };
 
 #endif // PRODUCT_H
