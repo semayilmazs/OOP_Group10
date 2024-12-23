@@ -10,7 +10,7 @@ private:
     std::string description; // New field for product description
 
 public:
-    Product(const std::string& name, double price, const std::string& description = "");
+    Product(const std::string& name, double price, const std::string& description, int stock);
     std::string getName() const;
     double getPrice() const;
     std::string getDescription() const; // Getter for description
