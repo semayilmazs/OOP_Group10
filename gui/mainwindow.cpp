@@ -4,7 +4,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-        availableProducts = {
+    availableProducts = {
         Product("Laptop", 1000.0, "A high-performance laptop with 16GB RAM and 512GB SSD.",4),
         Product("Phone", 500.0, "A smartphone with a 6.5-inch display and 128GB storage.",5),
         Product("Headphones", 150.0, "Noise-cancelling over-ear headphones with excellent sound quality.",12),
@@ -124,10 +124,8 @@ void MainWindow::onApplyDiscount() {
     // Apply the selected discount
     if (selectedDiscount == "%10 discount") {
         total -= total * 0.10; // Apply 10% discount
-    } 
+    }
 
     // Update the total label
     ui->totalLabel->setText("Total: $" + QString::number(total, 'f', 2));
 }
-
-

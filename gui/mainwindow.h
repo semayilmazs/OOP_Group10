@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidget>
+#include <QMessageBox>
 #include "Product.h"
 #include <vector>
 
@@ -33,4 +34,3 @@ private:
 };
 
 #endif // MAINWINDOW_H
-
