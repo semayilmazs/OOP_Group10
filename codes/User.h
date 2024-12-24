@@ -41,8 +41,8 @@ public:
     /**
      * @brief Virtual method for logging in. To be implemented by derived classes.
      */
-    virtual void login() = 0;
-
+    virtual bool login(const std::string& inputPassword);
+    virtual void logout();
     /**
      * @brief Gets the username.
      * @return The username as a string.
