@@ -8,6 +8,18 @@ void Seller::addProduct(const Product& product) {
     productsForSale.push_back(product);
     std::cout << "Product added: " << product.getName() << "\n";
 }
+bool Seller::login(const std::string& inputPassword) {
+    if (User::login(inputPassword)) {
+        std::cout << "Welcome back, esteemed seller: " << username << "\n";
+        return true;
+    }
+    return false;
+}
+
+void Seller::logout() {
+    std::cout << "Goodbye, esteemed seller: " << username << "\n";
+    User::logout();
+}
 
 void Seller::removeProduct(int index) {
     if (index >= 0 && index < productsForSale.size()) {
