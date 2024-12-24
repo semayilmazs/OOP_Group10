@@ -49,6 +49,12 @@ public:
     /**
      * @brief Displays seller-specific information.
      */
+    bool login(const std::string& inputPassword) override;
+
+    /**
+     * @brief Overrides the logout method for Seller-specific logic.
+     */
+    void logout() override;
     void displayInfo() const override;
 };
 
