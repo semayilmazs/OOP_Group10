@@ -1,28 +1,57 @@
 #include "SessionManager.h"
 #include "NotificationManager.h"
-#include "PasswordManager.h"
+#include "AuthenticationManager.h"
+#include "UserLoader.h"
 #include "Customer.h"
+#include "Seller.h"
 
 int main() {
     // Initialize managers
+    AuthenticationManager authManager;
     SessionManager sessionManager;
     NotificationManager notificationManager;
 
-    // Create a customer
-    Customer* user1 = new Customer("john_doe", PasswordManager::hashPassword("password123"));
+    // Load users from file
+    auto users = UserLoader::loadUsersFromFile("users.txt");
+    for (auto* user : users) {
+        authManager.registerUser(user);
+    }
 
     // Simulate login
-    std::string sessionID = sessionManager.loginUser(user1);
+    std::string username, password;
+    std::cout << "Enter username: ";
+    std::cin >> username;
+    std::cout << "Enter password: ";
+    std::cin >> password;
 
-    // Send notifications
-    notificationManager.sendNotification(NotificationType::Order, "Your order has been shipped!");
-    notificationManager.sendNotification(NotificationType::Stock, "Stock for 'Laptop' is running low!");
-    notificationManager.sendNotification(NotificationType::Promotion, "Special promotion: 20% off on all smartphones!");
+    User* loggedInUser = authManager.loginUser(username, password);
+    if (loggedInUser) {
+        // Check user type and provide specific messages
+        if (dynamic_cast<Customer*>(loggedInUser)) {
+            std::cout << "Customer-specific features available now.\n";
+        } else if (dynamic_cast<Seller*>(loggedInUser)) {
+            std::cout << "Seller-specific features available now.\n";
+        }
 
-    // Simulate logout
-    sessionManager.logoutUser(sessionID);
+        // Start session
+        std::string sessionID = sessionManager.loginUser(loggedInUser);
 
-    delete user1;
+        // Send notifications
+        notificationManager.sendNotification(NotificationType::Order, "Your order has been shipped!");
+        notificationManager.sendNotification(NotificationType::Stock, "Stock for 'Laptop' is running low!");
+        notificationManager.sendNotification(NotificationType::Promotion, "Special promotion: 20% off on all smartphones!");
+
+        // Simulate logout
+        sessionManager.logoutUser(sessionID);
+        loggedInUser->logout();
+    } else {
+        std::cout << "Login failed. Please check your credentials.\n";
+    }
+
+    // Clean up dynamically allocated users
+    for (auto* user : users) {
+        delete user;
+    }
 
     return 0;
 }
