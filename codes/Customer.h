@@ -78,6 +78,12 @@ public:
     /**
      * @brief Displays customer-specific information.
      */
+    bool login(const std::string& inputPassword) override;
+
+    /**
+     * @brief Overrides the logout method for Customer-specific logic.
+     */
+    void logout() override;
     void displayInfo() const override;
 };
 
