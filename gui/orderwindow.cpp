@@ -1,34 +1,29 @@
-#include "OrderWindow.h"
-#include "ui_OrderWindow.h"
-#include <QDebug>
+#ifndef ORDERWINDOW_H
+#define ORDERWINDOW_H
 
-OrderWindow::OrderWindow(Order* order, QWidget *parent)
-    : QWidget(parent), ui(new Ui::OrderWindow), order(order) {
-    ui->setupUi(this);
-    updateOrderDetails();
+#include <QWidget>
+#include "Order.h"
+#include "Customer.h"
+
+namespace Ui {
+class OrderWindow;
 }
 
-OrderWindow::~OrderWindow() {
-    delete ui;
-}
+class OrderWindow : public QWidget {
+    Q_OBJECT
 
-void OrderWindow::updateOrderDetails() {
-    QString details = QString("Order ID: %1\nTotal Amount: $%2\nShipment Method: %3")
-                        .arg(order->getOrderID())
-                        .arg(order->getTotalAmount(), 0, 'f', 2)
-                        .arg(order->getShipment().getMethod());
-    ui->orderDetailsTextEdit->setText(details);
-}
+public:
+    explicit OrderWindow(Order* order, Customer* customer, QWidget *parent = nullptr);
+    ~OrderWindow();
 
-void OrderWindow::on_confirmButton_clicked() {
-    if (order->confirmOrder()) {
-        ui->statusLabel->setText("Order confirmed.");
-    } else {
-        ui->statusLabel->setText("Order could not be confirmed.");
-    }
-}
+private slots:
+    void on_confirmButton_clicked();
+    void on_paymentButton_clicked();
 
-void OrderWindow::on_paymentButton_clicked() {
-    order->selectPayment();
-    qDebug() << "Payment method selected for order ID:" << order->getOrderID();
-}
+private:
+    Ui::OrderWindow *ui;
+    Order* order;
+    Customer* customer;
+};
+
+#endif // ORDERWINDOW_H
