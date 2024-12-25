@@ -19,8 +19,8 @@
      <rect>
       <x>220</x>
       <y>540</y>
-      <width>83</width>
-      <height>29</height>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -30,13 +30,27 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>570</x>
       <y>520</y>
       <width>371</width>
-      <height>141</height>
+      <height>191</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="1">
+      <widget class="QLabel" name="totalLabel">
+       <property name="text">
+        <string>Total: $0.00</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="removeButton">
+       <property name="text">
+        <string>Remove from cart</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="0">
       <widget class="QComboBox" name="discountComboBox">
        <property name="currentText">
@@ -54,24 +68,17 @@
        </item>
       </widget>
      </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="giftWrapping">
+       <property name="text">
+        <string>Gift Wrapping</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="applyDiscountButton">
        <property name="text">
         <string>Apply Discount</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="totalLabel">
-       <property name="text">
-        <string>Total: $0.00</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="removeButton">
-       <property name="text">
-        <string>Remove from cart</string>
        </property>
       </widget>
      </item>
@@ -83,7 +90,7 @@
       <x>40</x>
       <y>10</y>
       <width>951</width>
-      <height>501</height>
+      <height>441</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -94,26 +101,48 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QTextEdit" name="productDetailsTextEdit"/>
-     </item>
      <item row="0" column="1" rowspan="2">
       <widget class="QListWidget" name="cartListWidget"/>
      </item>
+     <item row="1" column="0">
+      <widget class="QTextEdit" name="productDetailsTextEdit"/>
+     </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="confirmOrder">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>610</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Confirm Order</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="cartNotification">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>460</y>
+      <width>471</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="discountNotification">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>610</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1350</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
