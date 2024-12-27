@@ -5,6 +5,7 @@ Sema Nur Yılmaz
 Aybüke Karaçavuş  
 Murathan Karakaya  
 Sıla Dolaş
+
 Ozgur Akın Demirbas
 
 To execute & run > gui_v2\exe\application.exe
