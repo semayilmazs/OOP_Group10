@@ -29,9 +29,10 @@ public:
      * @brief Verifies the user's credentials.
      * @param name Username to verify.
      * @param pwd Password to verify.
+     * @param email to verify from txt file.
      * @return True if credentials match, false otherwise.
      */
-    bool verification(const QString& name, const QString& pwd) const;
+    bool verification(const QString& name, const QString& pwd, const QString& email) const;
 
     /**
      * @brief Virtual method for signing up. To be implemented by derived classes.
@@ -72,6 +73,12 @@ public:
      * @param pwd New password to set.
      */
     void setPassword(const QString& pwd);
+
+    /**
+     * @brief checks whether the given email does exist in the txt file or not
+     * @param an emain address that belogs to customer
+     */
+    bool doesExist(const QString& email) const;
 };
 
 #endif // USER_H

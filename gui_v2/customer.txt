@@ -1,2 +1,4 @@
-john_doe,password123,4111111111111111,123 Main St
-jane_smith,password456,4222222222222222,456 Elm St
+john_doe,password123,john@gmail.com,4111111111111111,123 Main St
+jane_smith,password456,jane@gmail.com,4222222222222222,456 Elm Staybu,aybu1234,aybu@gmail.com,2788,
+aybu,aybu1234,aybu@gmail.com,2788,
+oop,oop1234,oop@gmail.com,2788,

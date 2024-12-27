@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>280</y>
-      <width>171</width>
-      <height>71</height>
+      <y>210</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>180</y>
-      <width>121</width>
-      <height>41</height>
+      <x>170</x>
+      <y>100</y>
+      <width>111</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -48,10 +48,10 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>120</y>
-      <width>121</width>
-      <height>41</height>
+      <x>190</x>
+      <y>50</y>
+      <width>91</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -66,31 +66,85 @@
    <widget class="QLineEdit" name="txtname">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>110</y>
+      <x>290</x>
+      <y>50</y>
       <width>171</width>
-      <height>51</height>
+      <height>31</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtnotification">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>380</y>
+      <width>411</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>280</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>If you don't have account sign up:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnsignup">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>310</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sign up</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txtpwd">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>180</y>
+      <x>290</x>
+      <y>100</y>
       <width>171</width>
-      <height>51</height>
+      <height>31</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtresult">
+   <widget class="QLineEdit" name="txtmail">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>390</y>
-      <width>411</width>
+      <x>290</x>
+      <y>150</y>
+      <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>160</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Mail:</string>
     </property>
    </widget>
   </widget>
