@@ -10,7 +10,7 @@ Ozgur Akın Demirbas
 
 # To execute & run:
 Open > gui_v2\exe\application.exe
-Once you open the application, enter a name and a password you want then proceed with clicking "Log in" button. 
+Once you open the application, enter your name, password, mail. Click "Sign up" first then enter those again and proceed with clicking "Log in" button. 
 After logging in, you can select the items on the list and you can add them to your cart, remove from the cart, apply discount and select gift wrapping by clicking the named buttons.
 Finally you can click on "Confirm Order" and finish your shopping.
 
